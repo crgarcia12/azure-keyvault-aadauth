@@ -11,6 +11,7 @@
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
+# This will get the credentials from wherever it can, like Environment variables, MSI, etc
 default_credential = DefaultAzureCredential(logging_enable=True)
 client = SecretClient("https://azure-kv-aadauth-kv.vault.azure.net/", default_credential)
 secretValue = client.get_secret("secret")
