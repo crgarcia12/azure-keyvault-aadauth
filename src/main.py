@@ -15,4 +15,6 @@ from azure.keyvault.secrets import SecretClient
 default_credential = DefaultAzureCredential(logging_enable=True)
 client = SecretClient("https://azure-kv-aadauth-kv.vault.azure.net/", default_credential)
 secretValue = client.get_secret("secret")
+print('------------------------------')
 print(secretValue.value)
+print('------------------------------')
